@@ -47,16 +47,16 @@
         </div>
         <!-- Header functionalities -->
         <div class="header__right">
-            <div class="header__button" onclick="invite()"><i class="fas fa-phone-square"></i></div>
-            <div class="header__button"><i class="fas fa-user-friends"></i></div>
-            <div class="header__button active"><i class="fas fa-comment-alt"></i></div>
-            <div class="header__button main__raiseHand_button" onclick="raiseHand()"><i class="fas fa-hand-paper"></i></div>
-            <div class="header__button end"><i class="fas fa-ellipsis-h"></i></div>
-            <div class="header__button main__video_button"  onclick="playStop()"><i class="fas fa-video"></i></div>
-            <div class="header__button main__mute_button "onclick="muteUnmute()"><i class="fas fa-microphone"></i></div>
-            <div class="header__button"><i class="fas fa-arrow-circle-up"></i></div>
-            <div class="header__button main__theme_button" onclick="themeToggler()"><i class="fas fa-palette"></i></div>
-            <div class="header__button" id="main__leave_meeting"><a href="./leave">Leave Meeting</a></div>
+            <div class="header__button" onclick="invite()" title="Invite others"><i class="fas fa-phone-square"></i></div>
+            <div class="header__button" title="Participants"><i class="fas fa-user-friends"></i></div>
+            <div class="header__button active" title="Chat"><i class="fas fa-comment-alt"></i></div>
+            <div class="header__button main__raiseHand_button" onclick="raiseHand()" title="Raise hand"><i class="fas fa-hand-paper"></i></div>
+            <div class="header__button end" title="More options"><i class="fas fa-ellipsis-h"></i></div>
+            <div class="header__button main__video_button"  onclick="playStop()" title="Video play/stop"><i class="fas fa-video"></i></div>
+            <div class="header__button main__mute_button "onclick="muteUnmute()" title="Audio mute/unmute"><i class="fas fa-microphone"></i></div>
+            <div class="header__button" title="Share screen"><i class="fas fa-arrow-circle-up"></i></div>
+            <div class="header__button main__theme_button" onclick="themeToggler()" title="Change theme"><i class="fas fa-palette"></i></div>
+            <div class="header__button" id="main__leave_meeting" title="Leave meeting"><a href="./leave">Leave Meeting</a></div>
         </div>
     </div><!-- Header ends here -->
 
@@ -72,11 +72,11 @@
             </div>
             <!-- Hover footer functionalities -->
             <div id="main__hover" >
-                <div class="timer">
+                <div class="timer" title="Videocall duration">
                     <i class="header__button fas fa-clock"></i>
                     <span id="time"></span>
                 </div>
-                <div class="header__button main__fullscreen_button" onclick="fullscreenToggler()" >
+                <div class="header__button main__fullscreen_button" onclick="fullscreenToggler()" title="Full screen" >
                     <i class="fas fa-expand"></i>
                 </div> 
             </div>
@@ -95,9 +95,9 @@
             </div>
             <!-- Input container for chat with attaching documents -->
             <div class="chat__msg__container">
-                <label for="chat__msg"><i class='fas fa-comment-dots'></i></label>
+                <label for="chat__msg" title="Type text"><i class='fas fa-comment-dots'></i></label>
                 <input type="text" id="chat__msg" placeholder="Type your message here...">
-                <label for="attachFiles"><i class="fas fa-paperclip"></i></label>
+                <label for="attachFiles" title="Attach documents"><i class="fas fa-paperclip"></i></label>
                 <input type="file" id="attachFiles" style="display: none;visibility: none;">
             </div>
         </div><!-- Chat component ends here -->

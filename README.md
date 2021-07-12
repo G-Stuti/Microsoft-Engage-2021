@@ -29,6 +29,7 @@ In this project, since the challenge was to do all of this on an individual basi
 - Functional leave meeting feature which routes to another webpage 
 - On leave page, feedback submit form available
 - Add files input available
+- Titles added for all features 
 
 ## Best Coding Practices Followed 
 
@@ -45,7 +46,7 @@ In this project, since the challenge was to do all of this on an individual basi
 - Consistent naming conventions
 - Similar code grouping
 - Avoided deep nesting
-- No inline CSS
+- Avoided inline CSS
 
 
 
