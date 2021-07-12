@@ -1,0 +1,112 @@
+<!-- A Responsive and Interactive Webpage which loads everytime the project runs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags for Search Engine Optimization(SEO) -->
+    <title>MS Teams Clone | Engage</title>
+    <meta name="Title" content="Microsoft Teams – Group Chat software" />
+    <meta name="keywords" content="Collaboration tools,Groups chat software,team chat software"/>
+    <meta name="description" content="Group chat is easy in Microsoft Teams. Sign up for free chat tools for your next team meeting and work remotely while staying connected to colleagues." />
+    <!-- Webpage Logo -->
+    <link rel="shortcut icon" href="https://www.voipone.ch/wp-content/uploads/2019/11/microsoft_teams.png" type="image/x-icon">
+    <!-- Room Id included with Embedded JavaScript -->
+    <script>
+        const ROOM_ID = "<%= roomId %>"
+    </script>
+    <!-- Bootstrap, jQuery, PopperJs links respectively -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Peer js link -->
+    <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <!-- Client side Socket.io -->
+    <script src="/socket.io/socket.io.js" defer></script>
+    <!-- Font awesome library -->
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js" defer></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Using <div> tags to divide the layout into Major Sections -->
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header__left">
+            MS Teams
+        </div>
+        <!-- Header functionalities -->
+        <div class="header__right">
+            <div class="header__button" onclick="invite()"><i class="fas fa-phone-square"></i></div>
+            <div class="header__button"><i class="fas fa-user-friends"></i></div>
+            <div class="header__button active"><i class="fas fa-comment-alt"></i></div>
+            <div class="header__button main__raiseHand_button" onclick="raiseHand()"><i class="fas fa-hand-paper"></i></div>
+            <div class="header__button end"><i class="fas fa-ellipsis-h"></i></div>
+            <div class="header__button main__video_button"  onclick="playStop()"><i class="fas fa-video"></i></div>
+            <div class="header__button main__mute_button "onclick="muteUnmute()"><i class="fas fa-microphone"></i></div>
+            <div class="header__button"><i class="fas fa-arrow-circle-up"></i></div>
+            <div class="header__button main__theme_button" onclick="themeToggler()"><i class="fas fa-palette"></i></div>
+            <div class="header__button" id="main__leave_meeting"><a href="./leave">Leave Meeting</a></div>
+        </div>
+    </div><!-- Header ends here -->
+
+    <!-- Video, chat and footer components -->
+    <div class="main">
+
+        <!-- Video screen with hover footer  -->
+        <div class="video__screen" onmouseenter="toggleUnhide()" onmouseleave="toggleHide()">
+            <div class="main__videos">
+                <div id="video__grid">
+                    <!-- This is where the participants' video appear -->
+                </div>
+            </div>
+            <!-- Hover footer functionalities -->
+            <div id="main__hover" >
+                <div class="timer">
+                    <i class="header__button fas fa-clock"></i>
+                    <span id="time"></span>
+                </div>
+                <div class="header__button main__fullscreen_button" onclick="fullscreenToggler()" >
+                    <i class="fas fa-expand"></i>
+                </div> 
+            </div>
+        </div> <!-- Video and footer component ends here -->
+
+        <!-- Chat component -->
+        <div class="chat__screen">
+            <!-- Chat header -->
+            <div class="chat__header">
+                Chat
+            </div>
+            <!-- Chat messages are displayed here  -->
+            <div class="chat__window">
+                <ul class="messages">
+                </ul>
+            </div>
+            <!-- Input container for chat with attaching documents -->
+            <div class="chat__msg__container">
+                <label for="chat__msg"><i class='fas fa-comment-dots'></i></label>
+                <input type="text" id="chat__msg" placeholder="Type your message here...">
+                <label for="attachFiles"><i class="fas fa-paperclip"></i></label>
+                <input type="file" id="attachFiles" style="display: none;visibility: none;">
+            </div>
+        </div><!-- Chat component ends here -->
+        
+    </div> <!-- Main component ends here-->
+</body>
+</html>
+
+
+
+
+

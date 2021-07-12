@@ -1,0 +1,229 @@
+/* Note:- To make the webpage reponsive, used only fluid responsive fonts like em, %, vw, vh etc. */
+
+/* Importing google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
+
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Using variables for webpage colors */
+/* Dark theme(default) */
+:root {
+  --primary-bg-color: #000000;
+  --secondary-bg-color: #1c1e20;
+  --font-color: #d2d2d2;
+  --hover-color: #343434;
+  --styling-color: #357ae8;
+  --msg-color: #ffffff;
+  --border-color: #3d3d42;
+}
+
+/* Light theme */
+.light {
+  --primary-bg-color: #fffff;
+  --secondary-bg-color: #f0f3f5;
+  --font-color: #black;
+  --hover-color: #c4c0c0;
+  --styling-color: #357ae8;
+  --msg-color: #000000;
+  --border-color: #c4c0c0;
+}
+
+/* Styling header */
+.header {
+  height: 10vh;
+  background-color: var(--secondary-bg-color);
+  color: var(--font-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+}
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Uchen", serif;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* Styling header functionalities */
+.header__right {
+  display: flex;
+  padding-right: 0.5%;
+  justify-content: center;
+  align-items: center;
+}
+.header__button {
+  padding: 8px 10px;
+  min-width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: tranform 0.7s linear;
+}
+.header__button:hover {
+  background-color: var(--hover-color);
+  border-radius: 5px;
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+}
+.header__button i {
+  font-size: 1.5em;
+}
+
+/* Styling leave meeting option */
+#main__leave_meeting {
+  border-radius: 12px;
+  font-weight: 800;
+  transition: transform 0.7s linear;
+}
+#main__leave_meeting a {
+  color: #ff0000;
+  text-decoration: none;
+}
+#main__leave_meeting:hover {
+  background-color: #ff0000;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+#main__leave_meeting a:hover {
+  color: #ffffff;
+}
+
+/* Styling container */
+.main {
+  height: 90vh;
+  display: flex;
+  width: 100vw;
+}
+
+/* Stylind video container */
+.video__screen {
+  flex: 0.8;
+  display: flex;
+  flex-flow: column wrap;
+}
+.main__videos {
+  flex-grow: 1;
+  background-color: var(--primary-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#video__grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+video {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  padding: 2%;
+}
+
+/* Styling hovering footer options */
+#main__hover {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  color: var(--font-color);
+  padding: 0.5em;
+}
+.timer i,
+.timer span {
+  display: inline !important;
+}
+
+/* Styling chat container */
+.chat__screen {
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-bg-color);
+  border-left: 1px solid var(--border-color);
+}
+.chat__header {
+  font-family: "Uchen", serif;
+  padding-top: 0.5%;
+  color: var(--font-color);
+  padding: 2%;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+}
+.chat__window {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1em;
+}
+.chat__msg__container {
+  padding: 1em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat__msg__container label {
+  padding: 0.5em;
+  margin: 0 !important;
+}
+.chat__msg__container i {
+  color: var(--font-color);
+  font-size: 1.5em;
+  cursor: pointer;
+}
+#chat__msg {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: var(--font-color);
+}
+
+/* Utilitiy Classes */
+.active {
+  border-bottom: 1px solid var(--styling-color);
+}
+.end {
+  border-right: 1px solid var(--border-color);
+}
+.unmute,
+.stop {
+  color: #ff0000;
+}
+.raiseHand {
+  color: var(--styling-color);
+}
+.messages {
+  color: var(--msg-color);
+  list-style: none;
+  font-weight: lighter;
+}
+.myMessages {
+  margin-right: 0;
+  text-align: right;
+  color: var(--styling-color);
+  font-weight: bolder;
+}
+
+/* Media Query fired for mobile phone view */
+@media (max-width: 500px) {
+  video {
+    height: 200px;
+    width: 200px;
+  }
+}
