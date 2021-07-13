@@ -7,7 +7,7 @@ Followed agile methodology. Added multiple additional functional features. Follo
 
 ## Agile Methodology
 In software development, agile practices involve discovering requirements and developing solutions through the collaborative effort of self-organizing and cross-functional teams and their customer/end user.
-In this project, since the challenge was to do all of this on an individual basis, I started by figuring out the requirements, what all needs to leart to get those functional features included and to create a responsive and interactive webpage. Then I planned on how to do those things one by one in an organised timely schedule.
+In this project, since the challenge was to do all of this on an individual basis, I started by figuring out the requirements, what all needs to be leart to get those functional features included and to create a responsive and interactive webpage. Then I planned on how to do those things one by one in an organised timely schedule.
 
 ## Features
 - Minimum requirement met
@@ -47,7 +47,7 @@ In this project, since the challenge was to do all of this on an individual basi
 - Avoided inline CSS
   
 ## 🛠 Tools & Technologies Used 
-HTML, CSS, JavaScript, NodeJs, Express, Peer, PeerJs, Nodemon, Socket.io, WebRTC, uuid, cors, Bootstrap, jQuery, Font awesome, Google fonts ...
+HTML, CSS, JavaScript, NodeJs, Express, Nodemon, Peer, PeerJs, Socket.io, WebRTC, uuid, cors, Bootstrap, jQuery, Font awesome, Google fonts ...
 
 ## Deployment
 The project has been deployed on the online cloud platform, Heroku.
