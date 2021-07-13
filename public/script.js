@@ -239,7 +239,6 @@ function fullscreenToggler() {
     document.documentElement.requestFullscreen();
   }
 }
-console.log(getFullscreenElement());
 function getFullscreenElement() {
   return (
     document.fullscreenElement ||
@@ -268,3 +267,35 @@ const disableLightMode = () => {
   document.body.classList.remove("light");
   localStorage.setItem("lightMode", null);
 };
+
+// - Functionality to share screen
+document.getElementById("shareScreen").addEventListener('click', (e) => {
+  navigator.mediaDevices.getDisplayMedia({
+      video: {
+          cursor: "always"
+      },
+      audio: {
+          echoCancellation: true,
+          noiseSuppression: true
+      }
+  }).then((stream) =>{
+      let videoTrack = stream.myVidStream()[0];
+      videoTrack.onended = function(){
+          stopShareScreen();
+      }
+      let sender = currentPeer.getSenders().find(function(s){
+          return s.track.kind == videoTrack.kind
+      })
+      sender.replaceTrack(videoTrack)
+  }).catch((err) => {
+      console.log("unable to get display media" + err)
+  })
+})
+
+function stopShareScreen(){
+  let videoTrack = window.localStream.myVidStream()[0];
+  var sender = currentPeer.getSenders().find(function(s){
+      return s.track.kind == videoTrack.kind;
+  })
+  sender.replaceTrack(videoTrack)
+}
