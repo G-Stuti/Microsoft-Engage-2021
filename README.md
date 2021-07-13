@@ -16,6 +16,8 @@ In this project, since the challenge was to do all of this on an individual basi
 - Functional mute/unmute feature
 - Functional play/stop video feature
 - Included a functional chat feature in your application where meeting participants can share info without disrupting the flow of the meeting. (An Adopt Feature)
+- Fuctional raise hand feature which notifies all the other users via chatbox
+- Fucntional notify feature via Chatbox whenever a user joins/leaves the room 
 - Functional feature to invite other users
 - Functional light/dark mode theme toggler feature
 - Functional fullscreen mode feature
@@ -35,8 +37,8 @@ In this project, since the challenge was to do all of this on an individual basi
 
 - Meta tags for SEO included
 - Cross platform
-- Checked accessiblity
-- Validated html code
+- Checked accessiblity on WAVE Web Accessibility Evaluation Tool
+- Validated by w3c Markup Validation Service (0 errors/warnings)
 - Documentation
 - Comments
 - Consistent indentation

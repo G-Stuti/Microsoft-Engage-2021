@@ -3,7 +3,7 @@ const socket = io("/");
 
 // - Creating peer to peer connection
 const myPeer = new Peer(undefined, {
-  path: '/peerjs',
+  // path: '/peerjs',
   host: "/",
   port: "443",
 });
@@ -37,10 +37,17 @@ navigator.mediaDevices
     });
 
     // - New user connection
-    socket.on("user-connected", (userId) => {
+    socket.on("user-connected", (userId,userName) => {
       setTimeout(() => {
         connectToNewUser(userId, stream);
       }, 1000);
+      // - Notifies other users about the user joining the room in Chatbox
+      $("ul").append(`<li class="message notify">
+      <b>
+      <i class="fas fa-sign-in-alt"></i>
+      <span>${userName} joined the room</span> 
+      </b>
+      </li>`);
     });
 
     // - Input value of chat functionality
@@ -78,12 +85,19 @@ navigator.mediaDevices
       }
       scrollToBottom();
     });
-
-    // - User disconnects
-    socket.on("user-disconnected", (userId) => {
-      if (peers[userId]) peers[userId].close();
-    });
   });
+
+// - User disconnects
+socket.on("user-disconnected", (userId,userName) => {
+  if (peers[userId]) peers[userId].close();
+  // - Notifies other users about the user leaving the room in Chatbox
+  $("ul").append(`<li class="message notify">
+  <b>
+  <span>${userName} left the room</span>
+  <i class="fas fa-running"></i> 
+  </b>
+  </li>`);
+});  
 
 // - Connecting with peer server
 myPeer.on("open", (id) => {
@@ -136,6 +150,21 @@ function copyToClipboard(text) {
   document.execCommand("copy");
   document.body.removeChild(clipBoard);
 }
+
+// - Functionality to raise hand when the user wants
+const raiseHand = () => {
+  socket.emit('raiseHand');
+}
+socket.on('raiseHand-notif', (userName) => {
+  // - Notifies all users in the room about the user raising hand in Chatbox
+  $("ul").append(`<li class="message notify">
+        <b>
+        <i class="fas fa-hand-sparkles"></i>
+        <span>${userName} raised hand</span> 
+        </b>
+        </li>`);
+})
+
 
 // - Functionality to play/stop the video when the user wants
 const playStop = () => {

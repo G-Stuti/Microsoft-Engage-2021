@@ -219,7 +219,16 @@ video {
   color: var(--styling-color);
   font-weight: bolder;
 }
-
+.main__raiseHand_button:hover{
+  color: var(--styling-color);
+}
+.notify{
+  border: 1px solid var(--font-color);
+  text-align: center;
+  box-shadow: 10px 3px 3px var(--font-color);
+  border-radius: 0.8%;
+  text-transform: capitalize;
+}
 /* Media Query fired for mobile phone view */
 @media (max-width: 500px) {
   video {

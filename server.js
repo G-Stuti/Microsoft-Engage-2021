@@ -52,19 +52,24 @@ io.on('connection', socket => {
     socket.on('join-room', (roomId, userId,userName) => {
 
         // - When user connects
-        socket.join(roomId)
-        socket.broadcast.to(roomId).emit('user-connected', userId)
+        socket.join(roomId);
+        socket.broadcast.to(roomId).emit('user-connected', userId, userName);
 
         // - When user sends a message
         socket.on('message', (message) => {
             // - Sharing the message to the same room
-            io.to(roomId).emit('createMessage', message,userName)
+            io.to(roomId).emit('createMessage', message, userName);
+        })
+
+        socket.on('raiseHand', () => {
+            io.to(roomId).emit('raiseHand-notif', userName);
         })
 
         // - When user disconnects
         socket.on('disconnect', () => {
-            socket.broadcast.to(roomId).emit('user-disconnected', userId)
+            socket.broadcast.to(roomId).emit('user-disconnected', userId, userName);
         })
+
     })
 })
 
