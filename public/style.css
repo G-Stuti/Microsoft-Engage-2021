@@ -229,6 +229,7 @@ video {
   border-radius: 0.8%;
   text-transform: capitalize;
 }
+
 /* Media Query fired for mobile phone view */
 @media (max-width: 500px) {
   video {

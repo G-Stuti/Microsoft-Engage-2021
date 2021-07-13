@@ -292,6 +292,7 @@ document.getElementById("shareScreen").addEventListener('click', (e) => {
   })
 })
 
+// - Functionality to stop sharing screen
 function stopShareScreen(){
   let videoTrack = window.localStream.myVidStream()[0];
   var sender = currentPeer.getSenders().find(function(s){

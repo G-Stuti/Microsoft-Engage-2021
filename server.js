@@ -20,18 +20,14 @@ const peerServer = ExpressPeerServer(server, {
 const { v4: uuidV4 } = require('uuid');
 const cors = require('cors');
 
-
 // - Middlewares
 app.use('/peerjs', peerServer)
 app.use(cors())
 
-
 // - Templating language set to ejs, which is a simple templating language that lets you generate HTML markup with plain JavaScript.
 app.set('view engine', 'ejs')
 
-
 app.use(express.static('public'))
-
 
 // - App routes
 app.get('/leave', (req, res) => {
@@ -61,6 +57,7 @@ io.on('connection', socket => {
             io.to(roomId).emit('createMessage', message, userName);
         })
 
+        // - When user raises hand
         socket.on('raiseHand', () => {
             io.to(roomId).emit('raiseHand-notif', userName);
         })
