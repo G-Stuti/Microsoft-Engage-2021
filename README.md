@@ -47,7 +47,7 @@ In this project, since the challenge was to do all of this on an individual basi
 - Avoided inline CSS
   
 ## 🛠 Tools & Technologies Used 
-HTML, CSS, JavaScript, NodeJs, Express, Nodemon, Peer, PeerJs, Socket.io, WebRTC, uuid, cors, Bootstrap, jQuery, Font awesome, Google fonts ...
+HTML, CSS, JavaScript, ejs, NodeJs, Express, Nodemon, Peer, PeerJs, Socket.io, WebRTC, uuid, cors, Bootstrap, jQuery, Font awesome, Google fonts ...
 
 ## Deployment
 The project has been deployed on the online cloud platform, Heroku.
