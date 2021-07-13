@@ -3,7 +3,7 @@ const socket = io("/");
 
 // - Creating peer to peer connection
 const myPeer = new Peer(undefined, {
-  // path: '/peerjs',
+  path: '/peerjs',
   host: "/",
   port: "443",
 });
