@@ -75,7 +75,7 @@ On the second terminal, start the server
 ## Demo
 The follwing is the link to the demo video
 ```bash 
-    youtube
+    https://youtu.be/a3qFHJHjhbQ
 ```
 ## Author
 - [@stutigupta](https://github.com/G-Stuti)
